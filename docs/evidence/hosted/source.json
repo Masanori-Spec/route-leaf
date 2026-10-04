@@ -1,0 +1,91 @@
+{
+  "compiler": "pyxform",
+  "compilerVersion": "4.5.0",
+  "inputSha256": "43a02d96bda37fb0988fb3dbdc673c59cee24b59b4f9198b98aec0022b311362",
+  "xformSha256": "1fd63796ed483b61ba6aaa34dcb4e8359215d72b91e474598cb39527d792cf8f",
+  "warnings": [],
+  "odkValidate": "not-run (conversion only; external engine and browser are separate stages)",
+  "questions": [
+    {
+      "source": "track",
+      "kind": "select_one",
+      "label": "Which workshop are you joining?",
+      "choices": [
+        {
+          "value": "print",
+          "label": "Print"
+        },
+        {
+          "value": "book",
+          "label": "Bookbinding"
+        }
+      ]
+    },
+    {
+      "source": "loan",
+      "kind": "select_one",
+      "label": "Do you need a loan kit?",
+      "choices": [
+        {
+          "value": "yes",
+          "label": "Yes"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        }
+      ]
+    },
+    {
+      "source": "print_experience",
+      "kind": "text",
+      "label": "Tell us about your printing experience.",
+      "choices": []
+    },
+    {
+      "source": "book_experience",
+      "kind": "text",
+      "label": "Tell us about your bookbinding experience.",
+      "choices": []
+    },
+    {
+      "source": "pickup",
+      "kind": "select_one",
+      "label": "When will you collect your loan kit?",
+      "choices": [
+        {
+          "value": "morning",
+          "label": "Morning"
+        },
+        {
+          "value": "evening",
+          "label": "Evening"
+        }
+      ]
+    },
+    {
+      "source": "morning_note",
+      "kind": "note",
+      "label": "Morning pickup: come to the front desk at 09:00.",
+      "choices": []
+    },
+    {
+      "source": "evening_note",
+      "kind": "note",
+      "label": "Evening pickup: come to the front desk at 17:00.",
+      "choices": []
+    },
+    {
+      "source": "packing_note",
+      "kind": "note",
+      "label": "Please bring a bag for your materials.",
+      "choices": []
+    },
+    {
+      "source": "final_comment",
+      "kind": "text",
+      "label": "Anything else the organizer should know?",
+      "choices": []
+    }
+  ]
+}

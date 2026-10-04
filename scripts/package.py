@@ -15,7 +15,7 @@ for p in sorted(ROOT.rglob('*')):
     if rel.suffix in ('.pyc',):continue
     if str(rel).startswith('generated/') and (rel.suffix in ('.html','.png') or p.name.endswith('.inspect.ndjson')):continue
     files.append(p)
-manifest={'product':'RouteLeaf','snapshot':'review-ready; hosted gates pending unless separately recorded','createdUtc':datetime.now(timezone.utc).isoformat(),'files':[]}
+manifest={'product':'RouteLeaf','snapshot':'source snapshot; verification provenance in docs/VERIFICATION.md','createdUtc':datetime.now(timezone.utc).isoformat(),'files':[]}
 archive=OUT/'route-leaf-source.zip'
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in files:

@@ -1,0 +1,193 @@
+{
+  "runUrl": "https://github.com/Masanori-Spec/route-leaf/actions/runs/37228150853",
+  "commit": "dd7d19a0497249b4b33bba806c09ca3cf5f3f37f",
+  "artifactId": 11312961753,
+  "artifactZipSha256": "677e5cf27dcc72257014427f9017e499696a0cacd150c5134148fadf4bae2ff8",
+  "files": [
+    {
+      "path": "official-engine-report.json",
+      "bytes": 25713,
+      "sha256": "f2beb5b4a191cc997dd0deb3526091ad5d5e9f9d6ed81fb9a7e51554e2e49e25"
+    },
+    {
+      "path": "official-web-forms-report.json",
+      "bytes": 25421,
+      "sha256": "a4117d220314c3b7da8be5dfcb83d8aa94aebb85ed41dc0a6cdcfc7a4778fd1a"
+    },
+    {
+      "path": "official/web-forms-book-evening.png",
+      "bytes": 77995,
+      "sha256": "ff093a2864ffed3f4e537e49cfc4fe4ac15a94ea99aa2bf81df8b654da311e93"
+    },
+    {
+      "path": "official/web-forms-book-morning.png",
+      "bytes": 78630,
+      "sha256": "94fe5c1798c8d756bf44ab0ebd71f6832f2018c086d69ed39c86254281fee3dc"
+    },
+    {
+      "path": "official/web-forms-book-no.png",
+      "bytes": 62664,
+      "sha256": "7c444978523a89dc37761544a410810973ec491cabaa3f67925f01adf594c2c9"
+    },
+    {
+      "path": "official/web-forms-print-evening.png",
+      "bytes": 77102,
+      "sha256": "6a8c34321a9cfe35857769705c34ef61ec0dde903eccc596df841b43156901b6"
+    },
+    {
+      "path": "official/web-forms-print-morning.png",
+      "bytes": 77774,
+      "sha256": "d0fb24c94037e7a4e25088592d405c4dca6e4f9e191853e7b2b9000bfa1bbd07"
+    },
+    {
+      "path": "official/web-forms-print-no.png",
+      "bytes": 56801,
+      "sha256": "649d73ac7a91c72b17933d0e414351a251ed83ee1700351c5aa4c8af37cb8d2f"
+    },
+    {
+      "path": "pdf-en/workshop-en-1.png",
+      "bytes": 62516,
+      "sha256": "886130f3a3d08d947929d3a9bc8c7e5788541cbbf9253205b46fdf2aa5fb6eb4"
+    },
+    {
+      "path": "pdf-en/workshop-en-2.png",
+      "bytes": 59052,
+      "sha256": "8f96d0be9f9da025d95045b942b190187573f91737ad0fdbaefc0e3e0abcd154"
+    },
+    {
+      "path": "pdf-en/workshop-en-3.png",
+      "bytes": 64141,
+      "sha256": "04298a794498d67a61f1b39695368ead91c4fdfbe94c4a4ae99c21f6d7f3f6dd"
+    },
+    {
+      "path": "pdf-en/workshop-en-4.png",
+      "bytes": 61834,
+      "sha256": "9990dd9ec40464877f226c62e293247101a0cb4b327b8d4d8811717e5d0e7acd"
+    },
+    {
+      "path": "pdf-en/workshop-en-5.png",
+      "bytes": 55142,
+      "sha256": "31dc00a027b8a56a8f3bc43b956fb29f712b6b7d9fad003229f648a647fad6d5"
+    },
+    {
+      "path": "pdf-en/workshop-en-6.png",
+      "bytes": 53483,
+      "sha256": "45c549d8d2192182232f55249611bca52be207debe721e90068dbf1d7bcca943"
+    },
+    {
+      "path": "pdf-en/workshop-en-7.png",
+      "bytes": 81973,
+      "sha256": "4fbee0397568b489617ce931ec482abe05dafdd1c521fd6325b1e2ad789a6527"
+    },
+    {
+      "path": "pdf-ja/workshop-ja-1.png",
+      "bytes": 70762,
+      "sha256": "b116813195137c069f5b3870f116a4699c772e42b3d87ca92cfd827347e71642"
+    },
+    {
+      "path": "pdf-ja/workshop-ja-2.png",
+      "bytes": 65813,
+      "sha256": "5dc362f532dee505e449e6e814afb66152aab5f38a3a0a0fd2ec1cb36f595731"
+    },
+    {
+      "path": "pdf-ja/workshop-ja-3.png",
+      "bytes": 70758,
+      "sha256": "3a0c1070f91050bf90b2724cf16aab8c398b04587a51c705353be2f4b41e73ce"
+    },
+    {
+      "path": "pdf-ja/workshop-ja-4.png",
+      "bytes": 66919,
+      "sha256": "e5818ebf2e772a40b3422f6ff86e4937cb293329c23f944a3294a58b6e2133f4"
+    },
+    {
+      "path": "pdf-ja/workshop-ja-5.png",
+      "bytes": 59581,
+      "sha256": "ef04a1f0c4e987f69a2e6811a810db50ae5b364049282947b1144c0508ef72d6"
+    },
+    {
+      "path": "pdf-ja/workshop-ja-6.png",
+      "bytes": 59448,
+      "sha256": "2cc864f6e1474faf97cb7c3e1009b60bdc578655adde28959546acda48a796da"
+    },
+    {
+      "path": "pdf-ja/workshop-ja-7.png",
+      "bytes": 96801,
+      "sha256": "d6ad867928f2469e464d64b15afa1a4124d5f4fa108990172f4c434f2716b1a0"
+    },
+    {
+      "path": "product-report.json",
+      "bytes": 1255,
+      "sha256": "b4b9777222c74b4fb9b01f48bac217af060e76c749e36f35bac7d2130d3722b5"
+    },
+    {
+      "path": "product/01-ja-empty.png",
+      "bytes": 173763,
+      "sha256": "77ec3de7b929a7ba101fa24284e6312acb69f4efcc97e08cc72aa7081e223de5"
+    },
+    {
+      "path": "product/02-en-cards.png",
+      "bytes": 323900,
+      "sha256": "c7ab90c8a171b2404c529a612668d848ed39533974105a5c83e74a7633e6bad7"
+    },
+    {
+      "path": "product/03-en-complete.png",
+      "bytes": 334666,
+      "sha256": "1e68d4a477e1b22bbcf01a0ca28fa26e9bb212a711325a7ba158d84b52df705f"
+    },
+    {
+      "path": "product/04-ja-ready.png",
+      "bytes": 358141,
+      "sha256": "63724608e9b60720d94244fd7b03b7a46754dc2a978b5006717c7caaef949684"
+    },
+    {
+      "path": "product/05-en-error.png",
+      "bytes": 163171,
+      "sha256": "b2ced57b3da654edb4ee2a7407cf1649f7b22009bf4c88673329a73db99fc756"
+    },
+    {
+      "path": "product/06-ja-mobile.png",
+      "bytes": 178111,
+      "sha256": "00f5ed4e2a6be528a5b9e6f9cdae8086ddb1299e9d9a6ac54d47ba72859573c6"
+    },
+    {
+      "path": "product/07-en-mobile.png",
+      "bytes": 282456,
+      "sha256": "f39a815de29e39f328d00bb46b06893a7d58ac6d2ee4afd05c25f43e1e3e35da"
+    },
+    {
+      "path": "product/08-ja-mobile-error.png",
+      "bytes": 132355,
+      "sha256": "97a1cc828926e7bffdc6e6bfd5b209df8f7723b832bfdbf353d94eb0d690242a"
+    },
+    {
+      "path": "product/09-en-mobile-error.png",
+      "bytes": 108455,
+      "sha256": "507f726ecb0c10ff85532ad6bc8cb9848dbe5e03316d0480c543167eac078f15"
+    },
+    {
+      "path": "source.json",
+      "bytes": 2143,
+      "sha256": "cc85dfc2e9c2dca54f95ab5961f1c755af4e2a751b726d552c3a837ebc6f1638"
+    },
+    {
+      "path": "workshop-en.pdf",
+      "bytes": 15117,
+      "sha256": "453733543cac5b2f4eadfa57a9727f953b0a0187c87366c6df1a59cefd5566e5"
+    },
+    {
+      "path": "workshop-en.routes.json",
+      "bytes": 9659,
+      "sha256": "8a6e45a16b33af79cbb75851df79847706787a4629e823c4a11b910a0667145e"
+    },
+    {
+      "path": "workshop-ja.pdf",
+      "bytes": 35381,
+      "sha256": "2f85cf41d3b9de9e23e70112e57ca9b4b541bb158973cc2a40ce9b6258c7d034"
+    },
+    {
+      "path": "workshop-ja.routes.json",
+      "bytes": 9863,
+      "sha256": "fc159d99fa6266a84f604c281963eb759db58cde2f509ab3ffe84d19d8fc5de0"
+    }
+  ]
+}

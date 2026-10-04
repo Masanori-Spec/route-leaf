@@ -1,0 +1,474 @@
+{
+  "schema": "routeleaf/1",
+  "title": "Workshop intake",
+  "language": "English (en)",
+  "start": "C01",
+  "counts": {
+    "questions": 9,
+    "histories": 6,
+    "cards": 12,
+    "pages": 6,
+    "answerSheetPages": 1
+  },
+  "controllers": [
+    "track",
+    "loan",
+    "pickup"
+  ],
+  "cards": [
+    {
+      "id": "C01",
+      "source": "track",
+      "questionNumber": 1,
+      "label": "Which workshop are you joining?",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 1,
+      "options": [
+        {
+          "value": "print",
+          "label": "Print",
+          "next": "C02"
+        },
+        {
+          "value": "book",
+          "label": "Bookbinding",
+          "next": "C03"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "source": "loan",
+      "questionNumber": 2,
+      "label": "Do you need a loan kit?",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 1,
+      "options": [
+        {
+          "value": "yes",
+          "label": "Yes",
+          "next": "C04"
+        },
+        {
+          "value": "no",
+          "label": "No",
+          "next": "C05"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "source": "loan",
+      "questionNumber": 2,
+      "label": "Do you need a loan kit?",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 2,
+      "options": [
+        {
+          "value": "yes",
+          "label": "Yes",
+          "next": "C06"
+        },
+        {
+          "value": "no",
+          "label": "No",
+          "next": "C07"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "source": "print_experience",
+      "questionNumber": 3,
+      "label": "Tell us about your printing experience.",
+      "hint": "Write the response on the answer sheet.",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 2,
+      "next": "C08"
+    },
+    {
+      "id": "C05",
+      "source": "print_experience",
+      "questionNumber": 3,
+      "label": "Tell us about your printing experience.",
+      "hint": "Write the response on the answer sheet.",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 3,
+      "next": "C12"
+    },
+    {
+      "id": "C06",
+      "source": "book_experience",
+      "questionNumber": 4,
+      "label": "Tell us about your bookbinding experience.",
+      "hint": "Write the response on the answer sheet.",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 3,
+      "next": "C08"
+    },
+    {
+      "id": "C07",
+      "source": "book_experience",
+      "questionNumber": 4,
+      "label": "Tell us about your bookbinding experience.",
+      "hint": "Write the response on the answer sheet.",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 4,
+      "next": "C11"
+    },
+    {
+      "id": "C08",
+      "source": "pickup",
+      "questionNumber": 5,
+      "label": "When will you collect your loan kit?",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 4,
+      "options": [
+        {
+          "value": "morning",
+          "label": "Morning",
+          "next": "C09"
+        },
+        {
+          "value": "evening",
+          "label": "Evening",
+          "next": "C10"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "source": "morning_note",
+      "questionNumber": 6,
+      "label": "Morning pickup: come to the front desk at 09:00.",
+      "hint": "",
+      "groups": [],
+      "kind": "note",
+      "required": false,
+      "page": 5,
+      "next": "C11"
+    },
+    {
+      "id": "C10",
+      "source": "evening_note",
+      "questionNumber": 7,
+      "label": "Evening pickup: come to the front desk at 17:00.",
+      "hint": "",
+      "groups": [],
+      "kind": "note",
+      "required": false,
+      "page": 5,
+      "next": "C11"
+    },
+    {
+      "id": "C11",
+      "source": "packing_note",
+      "questionNumber": 8,
+      "label": "Please bring a bag for your materials.",
+      "hint": "",
+      "groups": [],
+      "kind": "note",
+      "required": false,
+      "page": 6,
+      "next": "C12"
+    },
+    {
+      "id": "C12",
+      "source": "final_comment",
+      "questionNumber": 9,
+      "label": "Anything else the organizer should know?",
+      "hint": "",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 6,
+      "next": "END"
+    }
+  ],
+  "histories": [
+    {
+      "answers": {
+        "track": "print",
+        "loan": "yes",
+        "pickup": "morning"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "print_experience",
+        "pickup",
+        "morning_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C04",
+        "C08",
+        "C09",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "print",
+        "loan": "yes",
+        "pickup": "evening"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "print_experience",
+        "pickup",
+        "evening_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C04",
+        "C08",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "print",
+        "loan": "no"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "print_experience",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C05",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "book",
+        "loan": "yes",
+        "pickup": "morning"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "book_experience",
+        "pickup",
+        "morning_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C06",
+        "C08",
+        "C09",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "book",
+        "loan": "yes",
+        "pickup": "evening"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "book_experience",
+        "pickup",
+        "evening_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C06",
+        "C08",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "book",
+        "loan": "no"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "book_experience",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C07",
+        "C11",
+        "C12"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "name": "track",
+      "kind": "select_one",
+      "number": 1,
+      "label": "Which workshop are you joining?",
+      "hint": "",
+      "choices": [
+        {
+          "value": "print",
+          "label": "Print"
+        },
+        {
+          "value": "book",
+          "label": "Bookbinding"
+        }
+      ],
+      "required": true,
+      "groups": []
+    },
+    {
+      "name": "loan",
+      "kind": "select_one",
+      "number": 2,
+      "label": "Do you need a loan kit?",
+      "hint": "",
+      "choices": [
+        {
+          "value": "yes",
+          "label": "Yes"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        }
+      ],
+      "required": true,
+      "groups": []
+    },
+    {
+      "name": "print_experience",
+      "kind": "text",
+      "number": 3,
+      "label": "Tell us about your printing experience.",
+      "hint": "Write the response on the answer sheet.",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "book_experience",
+      "kind": "text",
+      "number": 4,
+      "label": "Tell us about your bookbinding experience.",
+      "hint": "Write the response on the answer sheet.",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "pickup",
+      "kind": "select_one",
+      "number": 5,
+      "label": "When will you collect your loan kit?",
+      "hint": "",
+      "choices": [
+        {
+          "value": "morning",
+          "label": "Morning"
+        },
+        {
+          "value": "evening",
+          "label": "Evening"
+        }
+      ],
+      "required": true,
+      "groups": []
+    },
+    {
+      "name": "morning_note",
+      "kind": "note",
+      "number": 6,
+      "label": "Morning pickup: come to the front desk at 09:00.",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "evening_note",
+      "kind": "note",
+      "number": 7,
+      "label": "Evening pickup: come to the front desk at 17:00.",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "packing_note",
+      "kind": "note",
+      "number": 8,
+      "label": "Please bring a bag for your materials.",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "final_comment",
+      "kind": "text",
+      "number": 9,
+      "label": "Anything else the organizer should know?",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    }
+  ],
+  "unreachable": [],
+  "limits": {
+    "questions": 30,
+    "histories": 512,
+    "cards": 80
+  },
+  "workflow": "fresh-forward-interview; changing a prior routing answer requires a clean restart"
+}

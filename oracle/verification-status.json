@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-04T18:14:32Z",
+  "checkedAt": "2026-10-04T19:26:24Z",
   "inputSha256": "43a02d96bda37fb0988fb3dbdc673c59cee24b59b4f9198b98aec0022b311362",
   "xformSha256": "1fd63796ed483b61ba6aaa34dcb4e8359215d72b91e474598cb39527d792cf8f",
   "pyxform": {
@@ -16,16 +16,30 @@
     "status": "passed",
     "histories": 6,
     "cardsCovered": 12,
-    "runtime": "Node 24.19.0 + jsdom 26.1.0",
-    "hostCompatibility": "Emscripten __dirname global only"
+    "runtime": "Node 24.16.0 + jsdom 26.1.0",
+    "hostCompatibility": "Emscripten __dirname global only",
+    "routeInputMode": "explicit-input"
   },
   "officialWebFormsBrowser": {
     "version": "1.0.3",
-    "status": "not-run",
-    "reason": "Browser stage is reserved for hosted Ubuntu 22.04 sandboxed Chrome CI; no local browser was launched"
+    "status": "passed",
+    "histories": 6,
+    "browser": "Chrome 154.0.8037.57",
+    "sandbox": true,
+    "routeInputMode": "explicit-input",
+    "allRelevanceSnapshotsMatch": true,
+    "localSubmissionsVerified": true
   },
   "javaOdkValidate": {
     "status": "not-run",
     "reason": "This harness compiles through pyxform without launching Java ODK Validate"
+  },
+  "verifiedCommit": "dd7d19a0497249b4b33bba806c09ca3cf5f3f37f",
+  "workflowRun": "https://github.com/Masanori-Spec/route-leaf/actions/runs/37228150853",
+  "routeInputPath": "test-results/browser/workshop-en.routes.json",
+  "routeSha256": "8a6e45a16b33af79cbb75851df79847706787a4629e823c4a11b910a0667145e",
+  "consumerUnit": {
+    "status": "passed",
+    "tests": 11
   }
 }

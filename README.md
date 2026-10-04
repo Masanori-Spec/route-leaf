@@ -1,5 +1,9 @@
 # RouteLeaf
 
+**Verified build:** all three [hosted jobs](https://github.com/Masanori-Spec/route-leaf/actions/runs/37228150853) passed for `dd7d19a0497249b4b33bba806c09ca3cf5f3f37f`: 66 product tests on Node 22/24, 11 browser case groups, actual PDF exports, and six complete official ODK Web Forms UI traces. [Verification and limits](docs/VERIFICATION.md) · [Screenshots and evidence](docs/evidence/hosted/README.md)
+
+![RouteLeaf Japanese workbench with contextual routing cards](docs/evidence/hosted/product/04-ja-ready.png)
+
 Compile a small XLSForm into **paper interviewer cards with explicit next destinations**. When a question's continuation depends on earlier answers, RouteLeaf creates context-specific versions of that card. The interviewer follows one destination beside the current answer instead of reinterpreting a compound condition.
 
 The browser application is a standalone, offline-capable HTML file. It has Japanese and English interface text, a separate questionnaire-language selector, a forward walkthrough, and PDF / printable HTML / answer-sheet HTML / JSON downloads. It sends no questionnaire data to a server.

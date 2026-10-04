@@ -1,0 +1,1038 @@
+{
+  "status": "passed",
+  "consumer": "@getodk/web-forms",
+  "version": "1.0.3",
+  "engineVersion": "1.0.3",
+  "routeInputPath": "test-results/browser/workshop-en.routes.json",
+  "routeInputMode": "explicit-input",
+  "routeSha256": "8a6e45a16b33af79cbb75851df79847706787a4629e823c4a11b910a0667145e",
+  "xformSha256": "1fd63796ed483b61ba6aaa34dcb4e8359215d72b91e474598cb39527d792cf8f",
+  "inputSha256": "43a02d96bda37fb0988fb3dbdc673c59cee24b59b4f9198b98aec0022b311362",
+  "sandbox": true,
+  "cases": [
+    {
+      "id": "print-no",
+      "answers": {
+        "track": "print",
+        "loan": "no"
+      },
+      "events": [
+        {
+          "event": "question",
+          "source": "track",
+          "kind": "select_one",
+          "label": "Which workshop are you joining?",
+          "choices": [
+            {
+              "value": "print",
+              "label": "Print"
+            },
+            {
+              "value": "book",
+              "label": "Bookbinding"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "track",
+          "value": "print"
+        },
+        {
+          "event": "question",
+          "source": "loan",
+          "kind": "select_one",
+          "label": "Do you need a loan kit?",
+          "choices": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "loan",
+          "value": "no"
+        },
+        {
+          "event": "question",
+          "source": "print_experience",
+          "kind": "text",
+          "label": "Tell us about your printing experience.",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "print_experience",
+          "value": "Oracle answer for print_experience"
+        },
+        {
+          "event": "question",
+          "source": "final_comment",
+          "kind": "text",
+          "label": "Anything else the organizer should know?",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "final_comment",
+          "value": "Oracle answer for final_comment"
+        },
+        {
+          "event": "terminal",
+          "value": "END"
+        }
+      ],
+      "snapshots": [
+        [
+          "track",
+          "loan",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "final_comment"
+        ]
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C05",
+        "C12"
+      ],
+      "submissionXml": "<data id=\"workshop_intake\" version=\"20261004\"><track>print</track><loan>no</loan><print_experience>Oracle answer for print_experience</print_experience><final_comment>Oracle answer for final_comment</final_comment><meta><instanceID>uuid:c3b7fe3d-600f-4bde-9d4f-97e0c73cb10d</instanceID></meta></data>",
+      "match": true
+    },
+    {
+      "id": "print-morning",
+      "answers": {
+        "track": "print",
+        "loan": "yes",
+        "pickup": "morning"
+      },
+      "events": [
+        {
+          "event": "question",
+          "source": "track",
+          "kind": "select_one",
+          "label": "Which workshop are you joining?",
+          "choices": [
+            {
+              "value": "print",
+              "label": "Print"
+            },
+            {
+              "value": "book",
+              "label": "Bookbinding"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "track",
+          "value": "print"
+        },
+        {
+          "event": "question",
+          "source": "loan",
+          "kind": "select_one",
+          "label": "Do you need a loan kit?",
+          "choices": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "loan",
+          "value": "yes"
+        },
+        {
+          "event": "question",
+          "source": "print_experience",
+          "kind": "text",
+          "label": "Tell us about your printing experience.",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "print_experience",
+          "value": "Oracle answer for print_experience"
+        },
+        {
+          "event": "question",
+          "source": "pickup",
+          "kind": "select_one",
+          "label": "When will you collect your loan kit?",
+          "choices": [
+            {
+              "value": "morning",
+              "label": "Morning"
+            },
+            {
+              "value": "evening",
+              "label": "Evening"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "pickup",
+          "value": "morning"
+        },
+        {
+          "event": "question",
+          "source": "morning_note",
+          "kind": "note",
+          "label": "Morning pickup: come to the front desk at 09:00.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "packing_note",
+          "kind": "note",
+          "label": "Please bring a bag for your materials.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "final_comment",
+          "kind": "text",
+          "label": "Anything else the organizer should know?",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "final_comment",
+          "value": "Oracle answer for final_comment"
+        },
+        {
+          "event": "terminal",
+          "value": "END"
+        }
+      ],
+      "snapshots": [
+        [
+          "track",
+          "loan",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ]
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C04",
+        "C08",
+        "C09",
+        "C11",
+        "C12"
+      ],
+      "submissionXml": "<data id=\"workshop_intake\" version=\"20261004\"><track>print</track><loan>yes</loan><print_experience>Oracle answer for print_experience</print_experience><pickup>morning</pickup><morning_note/><packing_note/><final_comment>Oracle answer for final_comment</final_comment><meta><instanceID>uuid:c4275550-f361-483a-97a5-79887d1f47f8</instanceID></meta></data>",
+      "match": true
+    },
+    {
+      "id": "print-evening",
+      "answers": {
+        "track": "print",
+        "loan": "yes",
+        "pickup": "evening"
+      },
+      "events": [
+        {
+          "event": "question",
+          "source": "track",
+          "kind": "select_one",
+          "label": "Which workshop are you joining?",
+          "choices": [
+            {
+              "value": "print",
+              "label": "Print"
+            },
+            {
+              "value": "book",
+              "label": "Bookbinding"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "track",
+          "value": "print"
+        },
+        {
+          "event": "question",
+          "source": "loan",
+          "kind": "select_one",
+          "label": "Do you need a loan kit?",
+          "choices": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "loan",
+          "value": "yes"
+        },
+        {
+          "event": "question",
+          "source": "print_experience",
+          "kind": "text",
+          "label": "Tell us about your printing experience.",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "print_experience",
+          "value": "Oracle answer for print_experience"
+        },
+        {
+          "event": "question",
+          "source": "pickup",
+          "kind": "select_one",
+          "label": "When will you collect your loan kit?",
+          "choices": [
+            {
+              "value": "morning",
+              "label": "Morning"
+            },
+            {
+              "value": "evening",
+              "label": "Evening"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "pickup",
+          "value": "evening"
+        },
+        {
+          "event": "question",
+          "source": "evening_note",
+          "kind": "note",
+          "label": "Evening pickup: come to the front desk at 17:00.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "packing_note",
+          "kind": "note",
+          "label": "Please bring a bag for your materials.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "final_comment",
+          "kind": "text",
+          "label": "Anything else the organizer should know?",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "final_comment",
+          "value": "Oracle answer for final_comment"
+        },
+        {
+          "event": "terminal",
+          "value": "END"
+        }
+      ],
+      "snapshots": [
+        [
+          "track",
+          "loan",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "print_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ]
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C04",
+        "C08",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "submissionXml": "<data id=\"workshop_intake\" version=\"20261004\"><track>print</track><loan>yes</loan><print_experience>Oracle answer for print_experience</print_experience><pickup>evening</pickup><evening_note/><packing_note/><final_comment>Oracle answer for final_comment</final_comment><meta><instanceID>uuid:f696b038-562b-4ad3-92ee-afeeddc47394</instanceID></meta></data>",
+      "match": true
+    },
+    {
+      "id": "book-no",
+      "answers": {
+        "track": "book",
+        "loan": "no"
+      },
+      "events": [
+        {
+          "event": "question",
+          "source": "track",
+          "kind": "select_one",
+          "label": "Which workshop are you joining?",
+          "choices": [
+            {
+              "value": "print",
+              "label": "Print"
+            },
+            {
+              "value": "book",
+              "label": "Bookbinding"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "track",
+          "value": "book"
+        },
+        {
+          "event": "question",
+          "source": "loan",
+          "kind": "select_one",
+          "label": "Do you need a loan kit?",
+          "choices": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "loan",
+          "value": "no"
+        },
+        {
+          "event": "question",
+          "source": "book_experience",
+          "kind": "text",
+          "label": "Tell us about your bookbinding experience.",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "book_experience",
+          "value": "Oracle answer for book_experience"
+        },
+        {
+          "event": "question",
+          "source": "packing_note",
+          "kind": "note",
+          "label": "Please bring a bag for your materials.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "final_comment",
+          "kind": "text",
+          "label": "Anything else the organizer should know?",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "final_comment",
+          "value": "Oracle answer for final_comment"
+        },
+        {
+          "event": "terminal",
+          "value": "END"
+        }
+      ],
+      "snapshots": [
+        [
+          "track",
+          "loan",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "packing_note",
+          "final_comment"
+        ]
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C07",
+        "C11",
+        "C12"
+      ],
+      "submissionXml": "<data id=\"workshop_intake\" version=\"20261004\"><track>book</track><loan>no</loan><book_experience>Oracle answer for book_experience</book_experience><packing_note/><final_comment>Oracle answer for final_comment</final_comment><meta><instanceID>uuid:53c25b3a-351b-4137-b98c-446f33509296</instanceID></meta></data>",
+      "match": true
+    },
+    {
+      "id": "book-morning",
+      "answers": {
+        "track": "book",
+        "loan": "yes",
+        "pickup": "morning"
+      },
+      "events": [
+        {
+          "event": "question",
+          "source": "track",
+          "kind": "select_one",
+          "label": "Which workshop are you joining?",
+          "choices": [
+            {
+              "value": "print",
+              "label": "Print"
+            },
+            {
+              "value": "book",
+              "label": "Bookbinding"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "track",
+          "value": "book"
+        },
+        {
+          "event": "question",
+          "source": "loan",
+          "kind": "select_one",
+          "label": "Do you need a loan kit?",
+          "choices": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "loan",
+          "value": "yes"
+        },
+        {
+          "event": "question",
+          "source": "book_experience",
+          "kind": "text",
+          "label": "Tell us about your bookbinding experience.",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "book_experience",
+          "value": "Oracle answer for book_experience"
+        },
+        {
+          "event": "question",
+          "source": "pickup",
+          "kind": "select_one",
+          "label": "When will you collect your loan kit?",
+          "choices": [
+            {
+              "value": "morning",
+              "label": "Morning"
+            },
+            {
+              "value": "evening",
+              "label": "Evening"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "pickup",
+          "value": "morning"
+        },
+        {
+          "event": "question",
+          "source": "morning_note",
+          "kind": "note",
+          "label": "Morning pickup: come to the front desk at 09:00.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "packing_note",
+          "kind": "note",
+          "label": "Please bring a bag for your materials.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "final_comment",
+          "kind": "text",
+          "label": "Anything else the organizer should know?",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "final_comment",
+          "value": "Oracle answer for final_comment"
+        },
+        {
+          "event": "terminal",
+          "value": "END"
+        }
+      ],
+      "snapshots": [
+        [
+          "track",
+          "loan",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "morning_note",
+          "packing_note",
+          "final_comment"
+        ]
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C06",
+        "C08",
+        "C09",
+        "C11",
+        "C12"
+      ],
+      "submissionXml": "<data id=\"workshop_intake\" version=\"20261004\"><track>book</track><loan>yes</loan><book_experience>Oracle answer for book_experience</book_experience><pickup>morning</pickup><morning_note/><packing_note/><final_comment>Oracle answer for final_comment</final_comment><meta><instanceID>uuid:f90476c7-d838-40ce-a696-aa0ec9fe3520</instanceID></meta></data>",
+      "match": true
+    },
+    {
+      "id": "book-evening",
+      "answers": {
+        "track": "book",
+        "loan": "yes",
+        "pickup": "evening"
+      },
+      "events": [
+        {
+          "event": "question",
+          "source": "track",
+          "kind": "select_one",
+          "label": "Which workshop are you joining?",
+          "choices": [
+            {
+              "value": "print",
+              "label": "Print"
+            },
+            {
+              "value": "book",
+              "label": "Bookbinding"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "track",
+          "value": "book"
+        },
+        {
+          "event": "question",
+          "source": "loan",
+          "kind": "select_one",
+          "label": "Do you need a loan kit?",
+          "choices": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "loan",
+          "value": "yes"
+        },
+        {
+          "event": "question",
+          "source": "book_experience",
+          "kind": "text",
+          "label": "Tell us about your bookbinding experience.",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "book_experience",
+          "value": "Oracle answer for book_experience"
+        },
+        {
+          "event": "question",
+          "source": "pickup",
+          "kind": "select_one",
+          "label": "When will you collect your loan kit?",
+          "choices": [
+            {
+              "value": "morning",
+              "label": "Morning"
+            },
+            {
+              "value": "evening",
+              "label": "Evening"
+            }
+          ]
+        },
+        {
+          "event": "answer",
+          "source": "pickup",
+          "value": "evening"
+        },
+        {
+          "event": "question",
+          "source": "evening_note",
+          "kind": "note",
+          "label": "Evening pickup: come to the front desk at 17:00.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "packing_note",
+          "kind": "note",
+          "label": "Please bring a bag for your materials.",
+          "choices": []
+        },
+        {
+          "event": "question",
+          "source": "final_comment",
+          "kind": "text",
+          "label": "Anything else the organizer should know?",
+          "choices": []
+        },
+        {
+          "event": "answer",
+          "source": "final_comment",
+          "value": "Oracle answer for final_comment"
+        },
+        {
+          "event": "terminal",
+          "value": "END"
+        }
+      ],
+      "snapshots": [
+        [
+          "track",
+          "loan",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ],
+        [
+          "track",
+          "loan",
+          "book_experience",
+          "pickup",
+          "evening_note",
+          "packing_note",
+          "final_comment"
+        ]
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C06",
+        "C08",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "submissionXml": "<data id=\"workshop_intake\" version=\"20261004\"><track>book</track><loan>yes</loan><book_experience>Oracle answer for book_experience</book_experience><pickup>evening</pickup><evening_note/><packing_note/><final_comment>Oracle answer for final_comment</final_comment><meta><instanceID>uuid:a2547b40-bf31-4b28-8007-4f4f4be18d00</instanceID></meta></data>",
+      "match": true
+    }
+  ],
+  "errors": [],
+  "deniedRequests": [],
+  "browserVersion": "154.0.8037.57"
+}

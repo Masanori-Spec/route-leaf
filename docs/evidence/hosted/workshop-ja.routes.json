@@ -1,0 +1,474 @@
+{
+  "schema": "routeleaf/1",
+  "title": "Workshop intake",
+  "language": "日本語 (ja)",
+  "start": "C01",
+  "counts": {
+    "questions": 9,
+    "histories": 6,
+    "cards": 12,
+    "pages": 6,
+    "answerSheetPages": 1
+  },
+  "controllers": [
+    "track",
+    "loan",
+    "pickup"
+  ],
+  "cards": [
+    {
+      "id": "C01",
+      "source": "track",
+      "questionNumber": 1,
+      "label": "参加するワークショップは？",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 1,
+      "options": [
+        {
+          "value": "print",
+          "label": "版画",
+          "next": "C02"
+        },
+        {
+          "value": "book",
+          "label": "製本",
+          "next": "C03"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "source": "loan",
+      "questionNumber": 2,
+      "label": "道具セットを借りますか？",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 1,
+      "options": [
+        {
+          "value": "yes",
+          "label": "はい",
+          "next": "C04"
+        },
+        {
+          "value": "no",
+          "label": "いいえ",
+          "next": "C05"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "source": "loan",
+      "questionNumber": 2,
+      "label": "道具セットを借りますか？",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 2,
+      "options": [
+        {
+          "value": "yes",
+          "label": "はい",
+          "next": "C06"
+        },
+        {
+          "value": "no",
+          "label": "いいえ",
+          "next": "C07"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "source": "print_experience",
+      "questionNumber": 3,
+      "label": "版画の経験を教えてください。",
+      "hint": "回答用紙に記入してください。",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 2,
+      "next": "C08"
+    },
+    {
+      "id": "C05",
+      "source": "print_experience",
+      "questionNumber": 3,
+      "label": "版画の経験を教えてください。",
+      "hint": "回答用紙に記入してください。",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 3,
+      "next": "C12"
+    },
+    {
+      "id": "C06",
+      "source": "book_experience",
+      "questionNumber": 4,
+      "label": "製本の経験を教えてください。",
+      "hint": "回答用紙に記入してください。",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 3,
+      "next": "C08"
+    },
+    {
+      "id": "C07",
+      "source": "book_experience",
+      "questionNumber": 4,
+      "label": "製本の経験を教えてください。",
+      "hint": "回答用紙に記入してください。",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 4,
+      "next": "C11"
+    },
+    {
+      "id": "C08",
+      "source": "pickup",
+      "questionNumber": 5,
+      "label": "道具セットを受け取る時間は？",
+      "hint": "",
+      "groups": [],
+      "kind": "select_one",
+      "required": true,
+      "page": 4,
+      "options": [
+        {
+          "value": "morning",
+          "label": "午前",
+          "next": "C09"
+        },
+        {
+          "value": "evening",
+          "label": "夕方",
+          "next": "C10"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "source": "morning_note",
+      "questionNumber": 6,
+      "label": "午前の受取：9時に受付へお越しください。",
+      "hint": "",
+      "groups": [],
+      "kind": "note",
+      "required": false,
+      "page": 5,
+      "next": "C11"
+    },
+    {
+      "id": "C10",
+      "source": "evening_note",
+      "questionNumber": 7,
+      "label": "夕方の受取：17時に受付へお越しください。",
+      "hint": "",
+      "groups": [],
+      "kind": "note",
+      "required": false,
+      "page": 5,
+      "next": "C11"
+    },
+    {
+      "id": "C11",
+      "source": "packing_note",
+      "questionNumber": 8,
+      "label": "材料を持ち帰る袋をご用意ください。",
+      "hint": "",
+      "groups": [],
+      "kind": "note",
+      "required": false,
+      "page": 6,
+      "next": "C12"
+    },
+    {
+      "id": "C12",
+      "source": "final_comment",
+      "questionNumber": 9,
+      "label": "主催者に伝えたいことはありますか？",
+      "hint": "",
+      "groups": [],
+      "kind": "text",
+      "required": false,
+      "page": 6,
+      "next": "END"
+    }
+  ],
+  "histories": [
+    {
+      "answers": {
+        "track": "print",
+        "loan": "yes",
+        "pickup": "morning"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "print_experience",
+        "pickup",
+        "morning_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C04",
+        "C08",
+        "C09",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "print",
+        "loan": "yes",
+        "pickup": "evening"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "print_experience",
+        "pickup",
+        "evening_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C04",
+        "C08",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "print",
+        "loan": "no"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "print_experience",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C02",
+        "C05",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "book",
+        "loan": "yes",
+        "pickup": "morning"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "book_experience",
+        "pickup",
+        "morning_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C06",
+        "C08",
+        "C09",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "book",
+        "loan": "yes",
+        "pickup": "evening"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "book_experience",
+        "pickup",
+        "evening_note",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C06",
+        "C08",
+        "C10",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "answers": {
+        "track": "book",
+        "loan": "no"
+      },
+      "questions": [
+        "track",
+        "loan",
+        "book_experience",
+        "packing_note",
+        "final_comment"
+      ],
+      "cards": [
+        "C01",
+        "C03",
+        "C07",
+        "C11",
+        "C12"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "name": "track",
+      "kind": "select_one",
+      "number": 1,
+      "label": "参加するワークショップは？",
+      "hint": "",
+      "choices": [
+        {
+          "value": "print",
+          "label": "版画"
+        },
+        {
+          "value": "book",
+          "label": "製本"
+        }
+      ],
+      "required": true,
+      "groups": []
+    },
+    {
+      "name": "loan",
+      "kind": "select_one",
+      "number": 2,
+      "label": "道具セットを借りますか？",
+      "hint": "",
+      "choices": [
+        {
+          "value": "yes",
+          "label": "はい"
+        },
+        {
+          "value": "no",
+          "label": "いいえ"
+        }
+      ],
+      "required": true,
+      "groups": []
+    },
+    {
+      "name": "print_experience",
+      "kind": "text",
+      "number": 3,
+      "label": "版画の経験を教えてください。",
+      "hint": "回答用紙に記入してください。",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "book_experience",
+      "kind": "text",
+      "number": 4,
+      "label": "製本の経験を教えてください。",
+      "hint": "回答用紙に記入してください。",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "pickup",
+      "kind": "select_one",
+      "number": 5,
+      "label": "道具セットを受け取る時間は？",
+      "hint": "",
+      "choices": [
+        {
+          "value": "morning",
+          "label": "午前"
+        },
+        {
+          "value": "evening",
+          "label": "夕方"
+        }
+      ],
+      "required": true,
+      "groups": []
+    },
+    {
+      "name": "morning_note",
+      "kind": "note",
+      "number": 6,
+      "label": "午前の受取：9時に受付へお越しください。",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "evening_note",
+      "kind": "note",
+      "number": 7,
+      "label": "夕方の受取：17時に受付へお越しください。",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "packing_note",
+      "kind": "note",
+      "number": 8,
+      "label": "材料を持ち帰る袋をご用意ください。",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    },
+    {
+      "name": "final_comment",
+      "kind": "text",
+      "number": 9,
+      "label": "主催者に伝えたいことはありますか？",
+      "hint": "",
+      "choices": [],
+      "required": false,
+      "groups": []
+    }
+  ],
+  "unreachable": [],
+  "limits": {
+    "questions": 30,
+    "histories": 512,
+    "cards": 80
+  },
+  "workflow": "fresh-forward-interview; changing a prior routing answer requires a clean restart"
+}

@@ -1,0 +1,39 @@
+{
+  "sandbox": true,
+  "cases": [
+    "Japanese empty state and keyboard skip link",
+    "Sample compile exact counts and contextual variants",
+    "Actual JSON HTML answer sheet and PDF downloads",
+    "All six walkthroughs match expected visited sources and END",
+    "Restart clears earlier routing context",
+    "Questionnaire language changes invalidate prior output",
+    "UI localization preserves current interview without changing source language",
+    "Malformed file removes stale output and disables compile",
+    "Reset clears uploaded file and all derived state",
+    "Latest input wins against interrupted sample/reset flow",
+    "Mobile Japanese and English ready/error states have no overflow"
+  ],
+  "screenshots": [
+    "01-ja-empty.png",
+    "02-en-cards.png",
+    "03-en-complete.png",
+    "04-ja-ready.png",
+    "05-en-error.png",
+    "06-ja-mobile.png",
+    "07-en-mobile.png",
+    "08-ja-mobile-error.png",
+    "09-en-mobile-error.png"
+  ],
+  "downloads": [
+    "workshop-en.routes.json",
+    "workshop-en-booklet.html",
+    "workshop-en-answer-sheet.html",
+    "workshop-en.pdf",
+    "workshop-ja.routes.json",
+    "workshop-ja.pdf",
+    "workshop-ja-booklet.html"
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "ok": true
+}
