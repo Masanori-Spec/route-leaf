@@ -1,0 +1,92 @@
+name: Verify RouteLeaf
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: routeleaf-unit-${{ matrix.node }}
+          path: |
+            generated/*.routes.json
+            generated/*.pdf
+            test-results/
+  sandbox-browser-and-consumer:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.16.0'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            oracle/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - run: npm ci --prefix oracle --ignore-scripts
+      - run: python -m pip install -r oracle/requirements.txt -r requirements.txt
+      - run: npm run check
+      - name: Confirm system Chrome and Poppler
+        run: |
+          google-chrome --version
+          pdftoppm -v
+      - name: Product UI and actual local downloads in sandboxed Chrome
+        run: npm run test:browser
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+      - name: Inspect and render every page of the actual UI-downloaded PDFs
+        run: |
+          python scripts/check-pdf.py test-results/browser/workshop-en.pdf test-results/browser/workshop-en.routes.json --render test-results/pdf-en
+          python scripts/check-pdf.py test-results/browser/workshop-ja.pdf test-results/browser/workshop-ja.routes.json --render test-results/pdf-ja
+      - name: Compile original XLSX using pinned pyxform
+        run: python oracle/compile.py
+      - run: npm run test:consumer-unit
+      - name: Official ODK engine compares actual UI-downloaded JSON
+        run: npm run test:oracle
+        env:
+          ROUTELEAF_ROUTES_FILE: test-results/browser/workshop-en.routes.json
+      - name: Actual official ODK Web Forms component compares UI-downloaded JSON
+        run: npm run test:consumer-browser
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+          ROUTELEAF_ROUTES_FILE: test-results/browser/workshop-en.routes.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: routeleaf-browser-and-consumer
+          path: |
+            test-results/
+            oracle/generated/
+            generated/workshop.xlsx
+            generated/*.routes.json
+          if-no-files-found: error
