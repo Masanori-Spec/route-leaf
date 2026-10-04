@@ -2,6 +2,7 @@ import {readXlsx} from '../src/xlsx.mjs';
 import {availableLanguages,compileTables} from '../src/core.mjs';
 import {validatePrintLayout,renderBookletHtml,renderAnswerSheetHtml,createPdf} from '../src/print.mjs';
 import {messages} from './messages.mjs';
+import {FONT_BASE64} from '../assets/font-data.mjs';
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 let lang='ja',tables=null,manifest=null,filename='',epoch=0,active='END',trace=[],noticeKey=null,noticeDetail='',busy=false;
 const t=k=>messages[lang][k]||k;
@@ -30,3 +31,11 @@ $('#download-html').addEventListener('click',()=>{if(manifest)save(renderBooklet
 $('#download-answers').addEventListener('click',()=>{if(manifest)save(renderAnswerSheetHtml(manifest),'routeleaf-answer-sheet.html','text/html;charset=utf-8');});
 $('#download-pdf').addEventListener('click',async()=>{if(!manifest||busy)return;const output=manifest,job=epoch;busy=true;$('#download-pdf').disabled=true;notice('pdfBusy');try{const bytes=await createPdf(output);if(job===epoch&&manifest===output){save(bytes,'routeleaf-booklet.pdf','application/pdf');notice('pdfReady');}}catch(e){if(job===epoch)notice('error',`print_layout · ${e.message}`,true);}finally{busy=false;$('#download-pdf').disabled=false;}});
 redraw();
+
+// The same local font used by PDF export also renders the interface and source labels.
+// Host systems without Japanese fonts must not fall back to missing-glyph boxes.
+if(typeof FontFace==='function'&&document.fonts){
+ const face=new FontFace('RouteLeaf UI',Uint8Array.from(atob(FONT_BASE64),c=>c.charCodeAt(0)),{style:'normal',weight:'400',display:'swap'});
+ document.fonts.add(face);document.documentElement.dataset.font='loading';
+ face.load().then(()=>{document.documentElement.dataset.font='ready';}).catch(()=>{document.documentElement.dataset.font='error';notice('error','font_load',true);});
+}
