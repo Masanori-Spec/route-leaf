@@ -20,14 +20,15 @@
     "test:consumer-unit": "node scripts/consumer-check.mjs unit"
   },
   "dependencies": {
-    "jszip": "3.10.1",
-    "sax": "1.6.1",
-    "pdf-lib": "1.17.1",
     "@pdf-lib/fontkit": "1.1.1",
-    "pako": "1.0.11"
+    "jszip": "3.10.1",
+    "pako": "1.0.11",
+    "pdf-lib": "1.17.1",
+    "sax": "1.6.1"
   },
   "devDependencies": {
     "@playwright/test": "1.56.0",
-    "esbuild": "0.25.11"
+    "esbuild": "0.25.11",
+    "jsdom": "26.1.0"
   }
 }
