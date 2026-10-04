@@ -8,11 +8,11 @@ import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { chromium } from '@playwright/test';
 import { workshopCases, traverseRoute, questionEvent, normalize, textAnswer } from './route-json.mjs';
+import { loadRouteArtifact } from './route-input.mjs';
 const root=import.meta.dirname;
 const out=new URL('./generated/',import.meta.url);
 await mkdir(out,{recursive:true});
-const artifactBytes=await readFile(new URL('../generated/workshop-en.routes.json',import.meta.url));
-const manifest=JSON.parse(artifactBytes);
+const {artifactBytes,manifest,routeInputPath,routeInputMode}=await loadRouteArtifact();
 const source=JSON.parse(await readFile(new URL('source.json',out),'utf8'));
 const byLabel=new Map(source.questions.map(q=>[normalize(q.label),q]));
 assert.equal(byLabel.size,source.questions.length,'Unique source labels are required for this fixed fixture');
@@ -22,7 +22,7 @@ server.stdout.on('data',x=>{serverOutput+=x;});
 server.stderr.on('data',x=>{serverOutput+=x;});
 let browser;
 const results=[],errors=[],deniedRequests=[];
-const report={status:'running',consumer:'@getodk/web-forms',version:'1.0.3',engineVersion:'1.0.3',
+const report={status:'running',consumer:'@getodk/web-forms',version:'1.0.3',engineVersion:'1.0.3',routeInputPath,routeInputMode,
   routeSha256:createHash('sha256').update(artifactBytes).digest('hex'),
   xformSha256:source.xformSha256, inputSha256:source.inputSha256,
   sandbox:true,cases:results,errors,deniedRequests};

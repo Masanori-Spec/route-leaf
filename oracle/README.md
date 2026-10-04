@@ -40,10 +40,12 @@ node scripts/consumer-check.mjs unit
 node scripts/consumer-check.mjs engine
 ```
 
+Both official consumer checks accept `ROUTELEAF_ROUTES_FILE`, resolved from the repository root even when the wrapper runs in `oracle/`. An explicitly configured missing or malformed file fails; it never falls back to the generated fixture. Reports record `routeInputPath`, `routeInputMode` and the exact byte SHA-256. The hosted workflow sets this to `test-results/browser/workshop-en.routes.json`, the actual file downloaded from the product UI. Local runs without this variable use the generated fixture and identify it as such.
+
 For the browser stage, use the existing hosted **Ubuntu 22.04** CI runner with sandboxed system Chrome:
 
 ```sh
-CHROME_BIN=/usr/bin/google-chrome node scripts/consumer-check.mjs browser
+ROUTELEAF_ROUTES_FILE=test-results/browser/workshop-en.routes.json CHROME_BIN=/usr/bin/google-chrome node scripts/consumer-check.mjs browser
 ```
 
 The script explicitly sets `chromiumSandbox: true`. Do not add `--no-sandbox`, change host security settings, or use the restricted local browser as a fallback. It starts and stops its own loopback Vite server on port 4175. Dependencies are separate from the application to make the external-consumer boundary auditable.

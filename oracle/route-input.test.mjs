@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile,mkdir,writeFile,rm} from 'node:fs/promises';import {loadRouteArtifact} from './route-input.mjs';
+const source=new URL('../generated/workshop-en.routes.json',import.meta.url),temp=new URL('../tmp/oracle-input-tests/',import.meta.url);
+await mkdir(temp,{recursive:true});
+test('explicit artifact path is resolved from repo root and bytes preserved',async()=>{const bytes=await readFile(source);await writeFile(new URL('delivered.routes.json',temp),bytes);const result=await loadRouteArtifact('tmp/oracle-input-tests/delivered.routes.json');assert.equal(result.routeInputMode,'explicit-input');assert.equal(result.routeInputPath,'tmp/oracle-input-tests/delivered.routes.json');assert.deepEqual(result.artifactBytes,bytes);});
+test('missing explicitly configured artifact fails instead of using generated fixture',async()=>{await assert.rejects(loadRouteArtifact('tmp/oracle-input-tests/not-found.routes.json'),{code:'ENOENT'});});
+test('malformed configured artifact fails instead of using generated fixture',async()=>{await writeFile(new URL('broken.routes.json',temp),'{broken');await assert.rejects(loadRouteArtifact('tmp/oracle-input-tests/broken.routes.json'),SyntaxError);});
+test('default local fixture is explicitly identified as generated fixture',async()=>{const result=await loadRouteArtifact('');assert.equal(result.routeInputMode,'generated-fixture');assert.equal(result.routeInputPath,'generated/workshop-en.routes.json');});
