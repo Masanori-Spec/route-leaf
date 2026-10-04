@@ -58,6 +58,8 @@ jobs:
       - run: npm run check
       - name: Confirm system Chrome and Poppler
         run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends poppler-utils
           google-chrome --version
           pdftoppm -v
       - name: Product UI and actual local downloads in sandboxed Chrome
