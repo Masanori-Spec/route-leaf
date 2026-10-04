@@ -1,0 +1,10 @@
+node_modules/
+.oracle-venv/
+oracle/node_modules/
+oracle/.venv/
+oracle/generated/
+test-results/
+__pycache__/
+*.pyc
+
+tmp/

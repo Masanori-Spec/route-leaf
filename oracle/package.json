@@ -1,0 +1,22 @@
+{
+  "name": "routeleaf-external-consumer-oracle",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": { "node": ">=24.16.0 <25", "npm": ">=11 <12" },
+  "scripts": {
+    "test": "node --test route-json.test.mjs",
+    "compile": "python compile.py",
+    "test:engine": "node engine-node.mjs",
+    "test:browser": "node browser-check.mjs",
+    "serve": "vite --host 127.0.0.1 --port 4175 --strictPort"
+  },
+  "dependencies": {
+    "@getodk/web-forms": "1.0.3",
+    "@getodk/xforms-engine": "1.0.3",
+    "@playwright/test": "1.56.0",
+    "jsdom": "26.1.0",
+    "vite": "6.4.1",
+    "vue": "3.5.29"
+  }
+}

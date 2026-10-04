@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-04T18:14:32Z",
+  "inputSha256": "43a02d96bda37fb0988fb3dbdc673c59cee24b59b4f9198b98aec0022b311362",
+  "xformSha256": "1fd63796ed483b61ba6aaa34dcb4e8359215d72b91e474598cb39527d792cf8f",
+  "pyxform": {
+    "version": "4.5.0",
+    "status": "passed",
+    "warnings": []
+  },
+  "routeReaderUnit": {
+    "status": "passed",
+    "tests": 4
+  },
+  "officialEngine": {
+    "version": "1.0.3",
+    "status": "passed",
+    "histories": 6,
+    "cardsCovered": 12,
+    "runtime": "Node 24.19.0 + jsdom 26.1.0",
+    "hostCompatibility": "Emscripten __dirname global only"
+  },
+  "officialWebFormsBrowser": {
+    "version": "1.0.3",
+    "status": "not-run",
+    "reason": "Browser stage is reserved for hosted Ubuntu 22.04 sandboxed Chrome CI; no local browser was launched"
+  },
+  "javaOdkValidate": {
+    "status": "not-run",
+    "reason": "This harness compiles through pyxform without launching Java ODK Validate"
+  }
+}
