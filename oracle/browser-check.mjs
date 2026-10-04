@@ -9,6 +9,7 @@ import { createHash } from 'node:crypto';
 import { chromium } from '@playwright/test';
 import { workshopCases, traverseRoute, questionEvent, normalize, textAnswer } from './route-json.mjs';
 import { loadRouteArtifact } from './route-input.mjs';
+import { readQuestionElements } from './official-dom.mjs';
 const root=import.meta.dirname;
 const out=new URL('./generated/',import.meta.url);
 await mkdir(out,{recursive:true});
@@ -28,18 +29,11 @@ const report={status:'running',consumer:'@getodk/web-forms',version:'1.0.3',engi
   sandbox:true,cases:results,errors,deniedRequests};
 const writeReport=()=>writeFile(new URL('browser-report.json',out),JSON.stringify(report,null,2)+'\n');
 async function domQuestions(page) {
-  const controls=await page.locator('.question-container:visible').evaluateAll(els=>els.map(el=>({
-    id:el.id,
-    label:el.querySelector('.control-text > label')?.textContent ?? '',
-    kind:el.querySelector('input[type="radio"]')?'select_one':el.querySelector('input,textarea')?'text':el.querySelector('.note-control')?'note':'unknown',
-    choices:[...el.querySelectorAll('label.value-option')].map(option=>({
-      value:option.querySelector('input[type="radio"]')?.value,
-      label:option.textContent ?? ''
-    }))
-  })));
+  const controls=await page.locator('.question-container:visible').evaluateAll(readQuestionElements);
   return controls.map(c=>{
     const q=byLabel.get(normalize(c.label));
     assert.ok(q,`Unexpected official UI question label: ${c.label}`);
+    assert.equal(c.required,q.kind==='select_one',`Official UI requiredness: ${q.source}`);
     return {...c,source:q.source,event:questionEvent(q.source,c.kind,c.label,c.choices)};
   });
 }
@@ -67,7 +61,10 @@ try {
     try {
       await page.goto('http://127.0.0.1:4175',{waitUntil:'networkidle'});
       await page.waitForFunction(()=>window.odkLoaded&&typeof window.oracleEngine==='function');
-      await page.locator('.form-initialization-status.ready').waitFor();
+      // The component intentionally leaves this status marker empty once ready.
+      await page.locator('.form-initialization-status.ready').waitFor({state:'attached'});
+      await page.locator('.question-container').first().waitFor({state:'visible'});
+      await page.getByRole('radio',{name:'Print',exact:true}).waitFor({state:'visible'});
       const observedEngine=await page.evaluate(answers=>window.oracleEngine(answers),c.answers);
       const route=traverseRoute(manifest,c.answers);
       assert.deepEqual(route.events,observedEngine.events,`Browser engine mismatch: ${c.id}`);
